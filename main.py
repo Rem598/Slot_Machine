@@ -142,9 +142,8 @@ def main():
         answer = input("Press Enter to play , (q to quit).")
         if answer == "q":
             break
-        balance = balance + spin(balance)
-
-    print(f"You left with ${balance}")        
+        balance += spin(balance)
+print(f"You left with ${balance}")        # type: ignore
 
  
 main()
@@ -158,6 +157,40 @@ main()
 
 
            
+
+
+
+
+deposit()
+
+
+
+
+
+
+
+def main():
+    balance = deposit()
+    lines = get_number_of_lines()
+    bet = get_bet()
+    total_bet = bet * lines
+    while True:
+        bet = get_bet()
+        total_bet = bet * lines
+        if total_bet > balance:
+            print(f"you do not have enought balance . Your current balance is : ${balance}")
+        else:
+            break
+    print(f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
+
+
+
+slots = get_slot_machine_spin(ROWS, COLS, symbol_count)    
+print_slot_machine(slots)
+winnings, winning_lines = check_winnings(slots,lines,bet, symbol_value) # type: ignore
+print(f"You won ${winnings}.")
+print(f"You won lines on ", * winning_lines)
+
 
 
 
