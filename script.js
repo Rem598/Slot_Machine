@@ -1,3 +1,4 @@
+
 const symbolCount = {
     "A": 2,
     "B": 4,
