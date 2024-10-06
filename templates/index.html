@@ -6,11 +6,12 @@
     <title>Slot Machine</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+</head>
 <body>
     <div class="container">
         <h1>Slot Machine</h1>
-        
-        <form id="slotForm" method ="POST">
+        <!-- We don't need form submission, so remove action and method -->
+        <form id="slotForm">
             <div class="input-group">
                 <label for="deposit_amount">Amount to Deposit:</label>
                 <input type="text" id="deposit_amount" name="deposit_amount" required>
@@ -19,20 +20,20 @@
                 <label for="bet_amount">Amount to Bet:</label>
                 <input type="text" id="bet_amount" name="bet_amount" required>
             </div>
-            
-            <button type="submit" id="spin-button">Spin</button>
+            <!-- Change this button to trigger JavaScript, not form submission -->
+            <button type="button" id="spin-button">Spin</button>
         </form>
 
-        
+        <!-- Slots -->
         <div class="slots">
             <span id="slot1" class="slot">?</span>
             <span id="slot2" class="slot">?</span>
             <span id="slot3" class="slot">?</span>
         </div>
         
-        
+        <!-- Message area -->
         <p id="message"></p>
-        
+        <!-- Balance display -->
         <p id="balance">Balance: $100</p>
     </div>
 
